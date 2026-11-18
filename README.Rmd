@@ -1,0 +1,41 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# assignmentB2SadilaJayasinghe
+
+`assignmentB2SadilaJayasinghe` contains one function, `count_all_missing_by_group()`, which counts the number of missing values in every column of a data frame, separately for each level of a grouping column. It is a quick way to see where data is missing before starting an analysis.
+
+## Installation
+
+You can install the package from GitHub with:
+
+```r
+devtools::install_github("UBC-STAT545-F2026/assignmentB2SadilaJayasinghe", ref = "0.1.0")
+```
+
+## Example
+
+Count the missing values in each column of the `airquality` data set, for each month:
+
+```{r example}
+library(assignmentB2SadilaJayasinghe)
+count_all_missing_by_group(airquality, Month)
+```
+
+By default the output is ungrouped. Use `.groups = "keep"` to keep it grouped by month:
+
+```{r}
+count_all_missing_by_group(airquality, Month, .groups = "keep")
+```
